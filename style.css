@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: all 0.1s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  background-color: #3a4764;
+}
+
+.calculator {
+  width: 50rem;
+  margin: 9.6rem auto;
+}
+
+/*****************************************/
+/* HEADER */
+/*****************************************/
+.calculator-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.header-heading {
+  font-size: 3rem;
+}
+
+.header-from {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.switch-field {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  box-shadow: 0 1.2rem 1.2rem rgba(0, 0, 0, 0.1);
+}
+
+.switch-field input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #232c43;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #d03f2f;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+
+/******************************************/
+/* OUTPUT */
+/******************************************/
+.output-container {
+  min-height: 12.5rem;
+  background-color: #182034;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand {
+  color: #cfcfcf;
+  font-size: 1.5rem;
+}
+
+.current-operand {
+  color: #fff;
+  font-size: 5rem;
+}
+
+/******************************************/
+/* BUTTONS */
+/******************************************/
+.button-container {
+  padding: 2rem;
+  background-color: #232c43;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.button-container button {
+  cursor: pointer;
+  background-color: #eae3dc;
+  border-radius: 5px;
+  height: 5rem;
+  font-family: "Spartan", sans-serif;
+  border-style: none;
+
+  font-size: 2rem;
+  color: #444b5a;
+  box-shadow: 0 0.5rem 0 rgba(180, 165, 151, 0.65);
+}
+
+.button-container button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0.3rem 0 rgba(180, 165, 151, 0.65);
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.button-container .del,
+.button-container .reset {
+  background-color: #637097;
+  box-shadow: 0 0.5rem 0 rgba(64, 78, 114, 0.65);
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.button-container .del:active,
+.button-container .reset:active {
+  box-shadow: 0 0.3rem 0 rgba(64, 78, 114, 0.65);
+}
+
+.button-container .equal {
+  background-color: #d03f2f;
+  box-shadow: 0 0.5rem 0 rgba(147, 38, 26, 0.65);
+  color: #fff;
+}
+
+.button-container .equal:active {
+  box-shadow: 0 0.3rem 0 rgba(147, 38, 26, 0.65);
+}
+
+/*****************************************/
+/* THEME COLOR CHANGE */
+/*****************************************/
+/* theme 2 */
+.theme-2 {
+  background-color: #e6e6e6;
+}
+.theme-2 .calculator-header-container {
+  color: #000;
+}
+.theme-2 .switch-field label {
+  background-color: #d1cccc;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.theme-2 .switch-field input:checked + label {
+  background-color: #ca5502;
+}
+
+.theme-2 .output-container {
+  background-color: hsl(0, 0%, 93%);
+}
+.theme-2 .previous-operand {
+  color: #333;
+}
+.theme-2 .current-operand {
+  color: #000;
+}
+
+.theme-2 .button-container {
+  background-color: #d1cccc;
+}
+.theme-2 .button-container button {
+  background-color: #e5e4e1;
+  box-shadow: 0 0.5rem 0 #a69d91;
+}
+.theme-2 .button-container button:active {
+  box-shadow: 0 0.3rem 0 #a69d91;
+}
+.theme-2 .button-container .del,
+.theme-2 .button-container .reset {
+  background-color: #377f86;
+  box-shadow: 0 0.5rem 0 #1b5f65;
+}
+.theme-2 .button-container .del:active,
+.theme-2 .button-container .reset:active {
+  box-shadow: 0 0.3rem 0 #1b5f65;
+}
+.theme-2 .button-container .equal {
+  background-color: #ca5502;
+  box-shadow: 0 0.5rem 0 #893901;
+}
+.theme-2 .button-container .equal:active {
+  box-shadow: 0 0.3rem 0 #893901;
+}
+
+/* theme 3 */
+.theme-3 {
+  background-color: #160628;
+}
+.theme-3 .calculator-header-container {
+  color: #ffe53d;
+}
+.theme-3 .switch-field label {
+  background-color: #1d0934;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.theme-3 .switch-field input:checked + label {
+  background-color: #00e0d1;
+}
+
+.theme-3 .output-container {
+  background-color: #1d0934;
+}
+.theme-3 .previous-operand {
+  color: #fff08e;
+}
+.theme-3 .current-operand {
+  color: #ffe53d;
+}
+
+.theme-3 .button-container {
+  background-color: #1d0934;
+}
+.theme-3 .button-container button {
+  color: #ffe53d;
+  background-color: #341c4f;
+  box-shadow: 0 0.5rem 0 #871c9c;
+}
+.theme-3 .button-container button:active {
+  box-shadow: 0 0.3rem 0 #871c9c;
+}
+.theme-3 .button-container .del,
+.theme-3 .button-container .reset {
+  color: #fff;
+  background-color: #58077d;
+  box-shadow: 0 0.5rem 0 #bc15f4;
+}
+.theme-3 .button-container .del:active,
+.theme-3 .button-container .reset:active {
+  box-shadow: 0 0.3rem 0 #bc15f4;
+}
+.theme-3 .button-container .equal {
+  color: #000;
+  background-color: #00e0d1;
+  box-shadow: 0 0.5rem 0 #6cf9f2;
+}
+.theme-3 .button-container .equal:active {
+  box-shadow: 0 0.3rem 0 #6cf9f2;
+}
+
+/*****************************************/
+/* ATTRIBUTION */
+/*****************************************/
+
+.attribution {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.attribution a {
+  color: #95a1d1;
+}
+
+.theme-2 .attribution {
+  color: #333;
+}
+
+/* 500px */
+
+@media (max-width: 32em) {
+  .calculator {
+    width: 90%;
+  }
+}
